@@ -43,7 +43,7 @@ namespace Ejecucion
             panel5.BackColor = Color.FromArgb(42, 42, 42);
 
             // TrackBar
-            trackBar1.BackColor = Color.FromArgb(40, 40, 40);
+            tbBarra.BackColor = Color.FromArgb(40, 40, 40);
         }
         
     }
