@@ -7,10 +7,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using NAudio.Wave;
+using WMPLib;
 
 namespace Ejecucion
 {
@@ -20,9 +21,14 @@ namespace Ejecucion
         private Cola cola = new Cola();
         private Pila historial = new Pila();
 
-        public Nodo primero=null;//l.circular
+        SoundPlayer player = new SoundPlayer();
+        WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
 
+        public Nodo primero=null;//l.circular
         private bool reproduciendo = false;
+        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +51,104 @@ namespace Ejecucion
             // TrackBar
             tbBarra.BackColor = Color.FromArgb(40, 40, 40);
         }
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if (reproduciendo )
+            {
+                reproduciendo = false;
+                btnPlay.Text = "▶";
+                //player.Stop();
+                player2.controls.pause();
+                // guardamos la cancion actual en el historial
+                //historial.Apilar(primero.dato);
+            }
+            else
+            {
+                reproduciendo = true;
+                btnPlay.Text = "||";
+                //player.SoundLocation = primero.dato.Ruta;
+                //player.Load();//carga el archivo de sonido
+                ////player.Play();
+                player2.controls.play();
+            }
+        }
+
+        private void btnArchivos_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.ShowDialog();
+            //MessageBox.Show("Nombre de cancion: "+ ofd.FileName);
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Musica nuevaCancion = new Musica();
+                nuevaCancion.Ruta = openFileDialog1.FileName;
+                playlist.IngresarFinal(nuevaCancion);
+                MostrarLista();
+            }
+        }
+        private void MostrarLista()
+        { 
+            Nodo temp = playlist.primero;
+            lbListadereproduccion.Items.Clear();
+            do
+            {
+                lbListadereproduccion.Items.Add(temp.dato.Ruta);
+                temp = temp.sig;
+            } while (temp != playlist.primero);
+        }
         
+        private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        { }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnPlayList1_Click(object sender, EventArgs e)
+        {
+            if (primero == null)
+            {
+                MessageBox.Show("Agrega una canción primero.");
+                return;
+            }
+            else if (reproduciendo) 
+            {
+                reproduciendo = false;
+                btnPlay.Text = "▶";
+                player.Stop();
+            }
+            else 
+            {
+                reproduciendo = true;
+                btnPlay.Text = "||";
+                player.SoundLocation = primero.dato.Ruta;
+                player.Load();
+                player.Play();
+            }
+        }
+
+        private void flowLayoutPanelListaReproduccion_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void lbListadereproduccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //player= new SoundPlayer(lbListadereproduccion.SelectedItem.ToString());
+            //player.Play();
+            player2.URL = lbListadereproduccion.SelectedItem.ToString();
+            player2.controls.play();
+            reproduciendo = true;
+
+        }
     }
 }

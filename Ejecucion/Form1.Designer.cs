@@ -32,29 +32,33 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
+            this.btnPlayList2 = new System.Windows.Forms.Button();
+            this.btnPlayList1 = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
             this.flowLayoutPanelRecomendaciones = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbListaReproduccion = new System.Windows.Forms.Label();
             this.flowLayoutPanelCola = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelCentro = new System.Windows.Forms.Panel();
+            this.btnArchivos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbListadereproduccion = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panelCancion = new System.Windows.Forms.Panel();
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
             this.tbBarra = new System.Windows.Forms.TrackBar();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnPlayList1 = new System.Windows.Forms.Button();
-            this.btnPlayList2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
+            this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelCancion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbBarra)).BeginInit();
@@ -67,12 +71,13 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.btnSiguiente.Location = new System.Drawing.Point(431, 27);
+            this.btnSiguiente.Location = new System.Drawing.Point(431, 28);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(40, 40);
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "⏭";
             this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
@@ -81,12 +86,13 @@
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnterior.ForeColor = System.Drawing.Color.White;
-            this.btnAnterior.Location = new System.Drawing.Point(334, 27);
+            this.btnAnterior.Location = new System.Drawing.Point(334, 28);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(40, 40);
             this.btnAnterior.TabIndex = 0;
             this.btnAnterior.Text = "⏮";
             this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnPlay
             // 
@@ -96,12 +102,13 @@
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.White;
-            this.btnPlay.Location = new System.Drawing.Point(380, 22);
+            this.btnPlay.Location = new System.Drawing.Point(380, 27);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(45, 45);
+            this.btnPlay.Size = new System.Drawing.Size(45, 43);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "▶";
             this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // PanelIzquierdo
             // 
@@ -115,8 +122,40 @@
             this.PanelIzquierdo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.PanelIzquierdo.Location = new System.Drawing.Point(0, 0);
             this.PanelIzquierdo.Name = "PanelIzquierdo";
-            this.PanelIzquierdo.Size = new System.Drawing.Size(200, 550);
+            this.PanelIzquierdo.Size = new System.Drawing.Size(200, 563);
             this.PanelIzquierdo.TabIndex = 3;
+            // 
+            // btnPlayList2
+            // 
+            this.btnPlayList2.FlatAppearance.BorderSize = 0;
+            this.btnPlayList2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayList2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayList2.ForeColor = System.Drawing.Color.White;
+            this.btnPlayList2.Location = new System.Drawing.Point(12, 187);
+            this.btnPlayList2.Name = "btnPlayList2";
+            this.btnPlayList2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnPlayList2.Size = new System.Drawing.Size(173, 36);
+            this.btnPlayList2.TabIndex = 4;
+            this.btnPlayList2.Text = "PlayList2";
+            this.btnPlayList2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlayList2.UseVisualStyleBackColor = true;
+            // 
+            // btnPlayList1
+            // 
+            this.btnPlayList1.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayList1.FlatAppearance.BorderSize = 0;
+            this.btnPlayList1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayList1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayList1.ForeColor = System.Drawing.Color.White;
+            this.btnPlayList1.Location = new System.Drawing.Point(12, 131);
+            this.btnPlayList1.Name = "btnPlayList1";
+            this.btnPlayList1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnPlayList1.Size = new System.Drawing.Size(173, 33);
+            this.btnPlayList1.TabIndex = 3;
+            this.btnPlayList1.Text = "PlayList1";
+            this.btnPlayList1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlayList1.UseVisualStyleBackColor = false;
+            this.btnPlayList1.Click += new System.EventHandler(this.btnPlayList1_Click);
             // 
             // btnInicio
             // 
@@ -132,6 +171,7 @@
             this.btnInicio.Text = "INICIO";
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // label2
             // 
@@ -155,19 +195,19 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MuiscApp";
+            this.label1.Text = "MusicApp";
             // 
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
             this.panelDerecho.Controls.Add(this.flowLayoutPanelRecomendaciones);
-            this.panelDerecho.Controls.Add(this.label5);
+            this.panelDerecho.Controls.Add(this.lbListaReproduccion);
             this.panelDerecho.Controls.Add(this.flowLayoutPanelCola);
             this.panelDerecho.Controls.Add(this.label4);
             this.panelDerecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelDerecho.Location = new System.Drawing.Point(604, 0);
+            this.panelDerecho.Location = new System.Drawing.Point(608, 0);
             this.panelDerecho.Name = "panelDerecho";
-            this.panelDerecho.Size = new System.Drawing.Size(220, 620);
+            this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
             // 
             // flowLayoutPanelRecomendaciones
@@ -178,17 +218,17 @@
             this.flowLayoutPanelRecomendaciones.Size = new System.Drawing.Size(200, 226);
             this.flowLayoutPanelRecomendaciones.TabIndex = 3;
             // 
-            // label5
+            // lbListaReproduccion
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(18, 337);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "RECOMENDADAS";
+            this.lbListaReproduccion.AutoSize = true;
+            this.lbListaReproduccion.BackColor = System.Drawing.Color.Transparent;
+            this.lbListaReproduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbListaReproduccion.ForeColor = System.Drawing.Color.White;
+            this.lbListaReproduccion.Location = new System.Drawing.Point(18, 337);
+            this.lbListaReproduccion.Name = "lbListaReproduccion";
+            this.lbListaReproduccion.Size = new System.Drawing.Size(168, 25);
+            this.lbListaReproduccion.TabIndex = 2;
+            this.lbListaReproduccion.Text = "RECOMENDADAS";
             // 
             // flowLayoutPanelCola
             // 
@@ -197,6 +237,7 @@
             this.flowLayoutPanelCola.Name = "flowLayoutPanelCola";
             this.flowLayoutPanelCola.Size = new System.Drawing.Size(209, 252);
             this.flowLayoutPanelCola.TabIndex = 1;
+            this.flowLayoutPanelCola.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelCola_Paint);
             // 
             // label4
             // 
@@ -212,14 +253,25 @@
             // panelCentro
             // 
             this.panelCentro.BackColor = System.Drawing.Color.Black;
+            this.panelCentro.Controls.Add(this.btnArchivos);
             this.panelCentro.Controls.Add(this.label7);
             this.panelCentro.Controls.Add(this.flowLayoutPanelListaReproduccion);
             this.panelCentro.Controls.Add(this.panel5);
             this.panelCentro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentro.Location = new System.Drawing.Point(0, 0);
             this.panelCentro.Name = "panelCentro";
-            this.panelCentro.Size = new System.Drawing.Size(604, 620);
+            this.panelCentro.Size = new System.Drawing.Size(608, 633);
             this.panelCentro.TabIndex = 5;
+            // 
+            // btnArchivos
+            // 
+            this.btnArchivos.Location = new System.Drawing.Point(500, 81);
+            this.btnArchivos.Name = "btnArchivos";
+            this.btnArchivos.Size = new System.Drawing.Size(75, 23);
+            this.btnArchivos.TabIndex = 5;
+            this.btnArchivos.Text = "📁";
+            this.btnArchivos.UseVisualStyleBackColor = true;
+            this.btnArchivos.Click += new System.EventHandler(this.btnArchivos_Click);
             // 
             // label7
             // 
@@ -237,12 +289,28 @@
             // 
             this.flowLayoutPanelListaReproduccion.AutoScroll = true;
             this.flowLayoutPanelListaReproduccion.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelListaReproduccion.Controls.Add(this.lbListadereproduccion);
             this.flowLayoutPanelListaReproduccion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 109);
+            this.flowLayoutPanelListaReproduccion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
+            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
             this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
-            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(365, 403);
+            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(365, 381);
             this.flowLayoutPanelListaReproduccion.TabIndex = 2;
             this.flowLayoutPanelListaReproduccion.WrapContents = false;
+            this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
+            // 
+            // lbListadereproduccion
+            // 
+            this.lbListadereproduccion.BackColor = System.Drawing.Color.Black;
+            this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
+            this.lbListadereproduccion.FormattingEnabled = true;
+            this.lbListadereproduccion.ItemHeight = 15;
+            this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
+            this.lbListadereproduccion.Name = "lbListadereproduccion";
+            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 364);
+            this.lbListadereproduccion.TabIndex = 6;
+            this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
             // 
             // panel5
             // 
@@ -252,6 +320,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(316, 46);
             this.panel5.TabIndex = 1;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBuscar.Location = new System.Drawing.Point(254, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(47, 36);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "🔎";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtBuscador
             // 
@@ -273,9 +355,9 @@
             this.panelCancion.Controls.Add(this.btnAnterior);
             this.panelCancion.Controls.Add(this.tbBarra);
             this.panelCancion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCancion.Location = new System.Drawing.Point(0, 550);
+            this.panelCancion.Location = new System.Drawing.Point(0, 563);
             this.panelCancion.Name = "panelCancion";
-            this.panelCancion.Size = new System.Drawing.Size(604, 70);
+            this.panelCancion.Size = new System.Drawing.Size(608, 70);
             this.panelCancion.TabIndex = 0;
             // 
             // lblArtista
@@ -301,64 +383,23 @@
             // 
             // tbBarra
             // 
-            this.tbBarra.Location = new System.Drawing.Point(246, 0);
+            this.tbBarra.Location = new System.Drawing.Point(233, 3);
             this.tbBarra.Maximum = 100;
             this.tbBarra.Name = "tbBarra";
             this.tbBarra.Size = new System.Drawing.Size(329, 45);
             this.tbBarra.TabIndex = 3;
             this.tbBarra.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
-            // btnBuscar
+            // openFileDialog1
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Location = new System.Drawing.Point(254, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(47, 36);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "🔎";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnPlayList1
-            // 
-            this.btnPlayList1.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayList1.FlatAppearance.BorderSize = 0;
-            this.btnPlayList1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayList1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayList1.ForeColor = System.Drawing.Color.White;
-            this.btnPlayList1.Location = new System.Drawing.Point(12, 131);
-            this.btnPlayList1.Name = "btnPlayList1";
-            this.btnPlayList1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnPlayList1.Size = new System.Drawing.Size(173, 33);
-            this.btnPlayList1.TabIndex = 3;
-            this.btnPlayList1.Text = "PlayList1";
-            this.btnPlayList1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlayList1.UseVisualStyleBackColor = false;
-            // 
-            // btnPlayList2
-            // 
-            this.btnPlayList2.FlatAppearance.BorderSize = 0;
-            this.btnPlayList2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayList2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayList2.ForeColor = System.Drawing.Color.White;
-            this.btnPlayList2.Location = new System.Drawing.Point(12, 187);
-            this.btnPlayList2.Name = "btnPlayList2";
-            this.btnPlayList2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnPlayList2.Size = new System.Drawing.Size(173, 36);
-            this.btnPlayList2.TabIndex = 4;
-            this.btnPlayList2.Text = "PlayList2";
-            this.btnPlayList2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlayList2.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(824, 620);
+            this.ClientSize = new System.Drawing.Size(828, 633);
             this.Controls.Add(this.PanelIzquierdo);
             this.Controls.Add(this.panelCancion);
             this.Controls.Add(this.panelCentro);
@@ -375,6 +416,7 @@
             this.panelDerecho.PerformLayout();
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
+            this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelCancion.ResumeLayout(false);
@@ -401,7 +443,7 @@
         private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRecomendaciones;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbListaReproduccion;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCola;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblArtista;
@@ -410,6 +452,9 @@
         private System.Windows.Forms.Button btnPlayList1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnPlayList2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnArchivos;
+        private System.Windows.Forms.ListBox lbListadereproduccion;
     }
 }
 

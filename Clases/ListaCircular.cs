@@ -9,6 +9,7 @@ namespace Clases
     public class ListaCircular
     {
         public Nodo primero = null;
+        public Nodo ultimo = null;
         public void IngresarFinal(Musica m)
         {
             Nodo nuevo = new Nodo();
@@ -17,17 +18,16 @@ namespace Clases
             if (primero == null)
             {
                 primero = nuevo;
-                nuevo.sig = primero;
-                nuevo.ant = primero;
+                ultimo = nuevo;
             }
             else
             {
-                Nodo ultimo = primero.ant;
                 ultimo.sig = nuevo;
                 nuevo.ant = ultimo;
-                nuevo.sig = primero;
-                primero.ant = nuevo;
+                ultimo = nuevo;
             }
+            ultimo.sig = primero;
+            primero.ant = ultimo;
         }
         public void IngresarInicio(Musica m)
         {
