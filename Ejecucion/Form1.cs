@@ -28,7 +28,6 @@ namespace Ejecucion
         private bool reproduciendo = false;
         
 
-
         public Form1()
         {
             InitializeComponent();
@@ -97,10 +96,7 @@ namespace Ejecucion
             } while (temp != playlist.primero);
         }
         
-        private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         { }
@@ -135,6 +131,10 @@ namespace Ejecucion
                 player.Play();
             }
         }
+        private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void flowLayoutPanelListaReproduccion_Paint(object sender, PaintEventArgs e)
         {
@@ -149,6 +149,12 @@ namespace Ejecucion
             player2.controls.play();
             reproduciendo = true;
 
+        }
+
+        private void btnRegistrarCancion_Click(object sender, EventArgs e)
+        {
+            RegistroCanciones.Form1 rc = new RegistroCanciones.Form1();
+            rc.Show();
         }
     }
 }

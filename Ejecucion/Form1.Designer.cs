@@ -55,6 +55,7 @@
             this.lblCancion = new System.Windows.Forms.Label();
             this.tbBarra = new System.Windows.Forms.TrackBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnRegistrarCancion = new System.Windows.Forms.Button();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -113,6 +114,7 @@
             // PanelIzquierdo
             // 
             this.PanelIzquierdo.BackColor = System.Drawing.Color.Gray;
+            this.PanelIzquierdo.Controls.Add(this.btnRegistrarCancion);
             this.PanelIzquierdo.Controls.Add(this.btnPlayList2);
             this.PanelIzquierdo.Controls.Add(this.btnPlayList1);
             this.PanelIzquierdo.Controls.Add(this.btnInicio);
@@ -394,6 +396,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnRegistrarCancion
+            // 
+            this.btnRegistrarCancion.Location = new System.Drawing.Point(12, 509);
+            this.btnRegistrarCancion.Name = "btnRegistrarCancion";
+            this.btnRegistrarCancion.Size = new System.Drawing.Size(166, 23);
+            this.btnRegistrarCancion.TabIndex = 5;
+            this.btnRegistrarCancion.Text = "Registrar Canción";
+            this.btnRegistrarCancion.UseVisualStyleBackColor = true;
+            this.btnRegistrarCancion.Click += new System.EventHandler(this.btnRegistrarCancion_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +467,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnArchivos;
         private System.Windows.Forms.ListBox lbListadereproduccion;
+        private System.Windows.Forms.Button btnRegistrarCancion;
     }
 }
 
