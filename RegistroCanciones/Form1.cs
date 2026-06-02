@@ -24,6 +24,14 @@ namespace RegistroCanciones
         private void Diseño()
         {
             this.BackColor = Color.FromArgb(18, 18, 18);
+            panel1.BackColor = Color.FromArgb(30, 30, 30);
+            txtNombre.BackColor = Color.FromArgb(42, 42, 42);
+            txtNombre.ForeColor = Color.White;
+            txtArtista.BackColor = Color.FromArgb(42, 42, 42);
+            txtArtista.ForeColor = Color.White;
+            btnBuscar.BackColor = Color.FromArgb(60, 60, 60);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
         }
     }
 }

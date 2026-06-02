@@ -32,6 +32,7 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
+            this.btnRegistrarCancion = new System.Windows.Forms.Button();
             this.btnPlayList2 = new System.Windows.Forms.Button();
             this.btnPlayList1 = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.lblCancion = new System.Windows.Forms.Label();
             this.tbBarra = new System.Windows.Forms.TrackBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnRegistrarCancion = new System.Windows.Forms.Button();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -126,6 +126,17 @@
             this.PanelIzquierdo.Name = "PanelIzquierdo";
             this.PanelIzquierdo.Size = new System.Drawing.Size(200, 563);
             this.PanelIzquierdo.TabIndex = 3;
+            // 
+            // btnRegistrarCancion
+            // 
+            this.btnRegistrarCancion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCancion.Location = new System.Drawing.Point(12, 509);
+            this.btnRegistrarCancion.Name = "btnRegistrarCancion";
+            this.btnRegistrarCancion.Size = new System.Drawing.Size(173, 33);
+            this.btnRegistrarCancion.TabIndex = 5;
+            this.btnRegistrarCancion.Text = "Registrar Canción";
+            this.btnRegistrarCancion.UseVisualStyleBackColor = true;
+            this.btnRegistrarCancion.Click += new System.EventHandler(this.btnRegistrarCancion_Click);
             // 
             // btnPlayList2
             // 
@@ -395,16 +406,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnRegistrarCancion
-            // 
-            this.btnRegistrarCancion.Location = new System.Drawing.Point(12, 509);
-            this.btnRegistrarCancion.Name = "btnRegistrarCancion";
-            this.btnRegistrarCancion.Size = new System.Drawing.Size(166, 23);
-            this.btnRegistrarCancion.TabIndex = 5;
-            this.btnRegistrarCancion.Text = "Registrar Canción";
-            this.btnRegistrarCancion.UseVisualStyleBackColor = true;
-            this.btnRegistrarCancion.Click += new System.EventHandler(this.btnRegistrarCancion_Click);
             // 
             // Form1
             // 
