@@ -320,7 +320,7 @@
             // 
             // lbListadereproduccion
             // 
-            this.lbListadereproduccion.BackColor = System.Drawing.Color.Black;
+            this.lbListadereproduccion.BackColor = System.Drawing.SystemColors.Desktop;
             this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
             this.lbListadereproduccion.FormattingEnabled = true;
             this.lbListadereproduccion.ItemHeight = 15;
@@ -384,9 +384,9 @@
             this.lblArtista.ForeColor = System.Drawing.Color.Silver;
             this.lblArtista.Location = new System.Drawing.Point(35, 35);
             this.lblArtista.Name = "lblArtista";
-            this.lblArtista.Size = new System.Drawing.Size(35, 13);
+            this.lblArtista.Size = new System.Drawing.Size(36, 13);
             this.lblArtista.TabIndex = 5;
-            this.lblArtista.Text = "label6";
+            this.lblArtista.Text = "Artista";
             // 
             // lblCancion
             // 
@@ -395,9 +395,9 @@
             this.lblCancion.ForeColor = System.Drawing.Color.White;
             this.lblCancion.Location = new System.Drawing.Point(35, 13);
             this.lblCancion.Name = "lblCancion";
-            this.lblCancion.Size = new System.Drawing.Size(15, 17);
+            this.lblCancion.Size = new System.Drawing.Size(57, 17);
             this.lblCancion.TabIndex = 4;
-            this.lblCancion.Text = "1";
+            this.lblCancion.Text = "Cancion";
             // 
             // tbBarra
             // 

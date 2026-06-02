@@ -14,6 +14,9 @@ namespace RegistroCanciones
 {
     public partial class Form1 : Form
     {
+        private ListaCircular playlist = new ListaCircular();
+        private Cola cola = new Cola();
+        private Pila historial = new Pila();
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +48,11 @@ namespace RegistroCanciones
                 //playlist.IngresarFinal(nuevaCancion);
                 //MostrarLista();
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

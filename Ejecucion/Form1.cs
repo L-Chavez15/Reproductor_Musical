@@ -21,7 +21,7 @@ namespace Ejecucion
         private Cola cola = new Cola();
         private Pila historial = new Pila();
 
-        SoundPlayer player = new SoundPlayer();
+        //SoundPlayer player = new SoundPlayer();
         WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
 
         public Nodo primero=null;//l.circular
@@ -96,8 +96,6 @@ namespace Ejecucion
             } while (temp != playlist.primero);
         }
         
-        
-
         private void btnSiguiente_Click(object sender, EventArgs e)
         { }
 
@@ -111,25 +109,7 @@ namespace Ejecucion
 
         private void btnPlayList1_Click(object sender, EventArgs e)
         {
-            if (primero == null)
-            {
-                MessageBox.Show("Agrega una canción primero.");
-                return;
-            }
-            else if (reproduciendo) 
-            {
-                reproduciendo = false;
-                btnPlay.Text = "▶";
-                player.Stop();
-            }
-            else 
-            {
-                reproduciendo = true;
-                btnPlay.Text = "||";
-                player.SoundLocation = primero.dato.Ruta;
-                player.Load();
-                player.Play();
-            }
+            
         }
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
