@@ -129,13 +129,18 @@
             // 
             // btnRegistrarCancion
             // 
+            this.btnRegistrarCancion.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarCancion.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarCancion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarCancion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCancion.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarCancion.Location = new System.Drawing.Point(12, 509);
             this.btnRegistrarCancion.Name = "btnRegistrarCancion";
+            this.btnRegistrarCancion.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnRegistrarCancion.Size = new System.Drawing.Size(173, 33);
             this.btnRegistrarCancion.TabIndex = 5;
             this.btnRegistrarCancion.Text = "Registrar Canción";
-            this.btnRegistrarCancion.UseVisualStyleBackColor = true;
+            this.btnRegistrarCancion.UseVisualStyleBackColor = false;
             this.btnRegistrarCancion.Click += new System.EventHandler(this.btnRegistrarCancion_Click);
             // 
             // btnPlayList2
