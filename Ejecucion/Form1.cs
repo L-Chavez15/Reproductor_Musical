@@ -24,7 +24,6 @@ namespace Ejecucion
         //SoundPlayer player = new SoundPlayer();
         WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
 
-        public Nodo primero=null;//l.circular
         private bool reproduciendo = false;
         
 
@@ -86,13 +85,20 @@ namespace Ejecucion
             }
         }
         private void MostrarLista()
-        { 
-            Nodo temp = playlist.primero;
+        {
             lbListadereproduccion.Items.Clear();
+            Nodo temp = playlist.primero;
+
+            if (playlist.primero == null)
+            {
+                return;
+            }
+
             do
             {
                 lbListadereproduccion.Items.Add(temp.dato.Ruta);
                 temp = temp.sig;
+
             } while (temp != playlist.primero);
         }
         
