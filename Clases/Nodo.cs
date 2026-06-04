@@ -11,5 +11,8 @@ namespace Clases
         public Musica dato;
         public Nodo sig = null;
         public Nodo ant = null;
+
+        public Nodo derecha=null;
+        public Nodo izquierda = null;
     }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arbol.cs" />
     <Compile Include="ListaCircular.cs" />
     <Compile Include="ListaDoble.cs" />
     <Compile Include="Musica.cs" />
