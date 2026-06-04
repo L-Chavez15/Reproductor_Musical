@@ -32,6 +32,8 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnPlaylist3 = new System.Windows.Forms.Button();
             this.btnRegistrarCancion = new System.Windows.Forms.Button();
             this.btnPlayList2 = new System.Windows.Forms.Button();
             this.btnPlayList1 = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.lblCancion = new System.Windows.Forms.Label();
             this.tbBarra = new System.Windows.Forms.TrackBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnPlaylist3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -130,6 +130,33 @@
             this.PanelIzquierdo.Name = "PanelIzquierdo";
             this.PanelIzquierdo.Size = new System.Drawing.Size(200, 563);
             this.PanelIzquierdo.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label3.Location = new System.Drawing.Point(12, 163);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "PLAYLIST";
+            // 
+            // btnPlaylist3
+            // 
+            this.btnPlaylist3.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlaylist3.FlatAppearance.BorderSize = 0;
+            this.btnPlaylist3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaylist3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlaylist3.ForeColor = System.Drawing.Color.White;
+            this.btnPlaylist3.Location = new System.Drawing.Point(12, 324);
+            this.btnPlaylist3.Name = "btnPlaylist3";
+            this.btnPlaylist3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnPlaylist3.Size = new System.Drawing.Size(173, 33);
+            this.btnPlaylist3.TabIndex = 3;
+            this.btnPlaylist3.Text = "CUMBIA";
+            this.btnPlaylist3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaylist3.UseVisualStyleBackColor = false;
             // 
             // btnRegistrarCancion
             // 
@@ -268,9 +295,10 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(18, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 25);
+            this.label4.Size = new System.Drawing.Size(109, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "COLA";
+            this.label4.Text = "RECIENTES";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelCentro
             // 
@@ -415,33 +443,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnPlaylist3
-            // 
-            this.btnPlaylist3.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlaylist3.FlatAppearance.BorderSize = 0;
-            this.btnPlaylist3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaylist3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaylist3.ForeColor = System.Drawing.Color.White;
-            this.btnPlaylist3.Location = new System.Drawing.Point(12, 324);
-            this.btnPlaylist3.Name = "btnPlaylist3";
-            this.btnPlaylist3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnPlaylist3.Size = new System.Drawing.Size(173, 33);
-            this.btnPlaylist3.TabIndex = 3;
-            this.btnPlaylist3.Text = "CUMBIA";
-            this.btnPlaylist3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist3.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.label3.Location = new System.Drawing.Point(12, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "PLAYLIST";
             // 
             // Form1
             // 

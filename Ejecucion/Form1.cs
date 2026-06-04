@@ -17,8 +17,7 @@ namespace Ejecucion
 {
     public partial class Form1 : Form
     {
-        private ListaCircular playlist = new ListaCircular();
-        private Cola cola = new Cola();
+        public ListaCircular playlist = new ListaCircular();
         private Pila historial = new Pila();
 
         //SoundPlayer player = new SoundPlayer();
@@ -55,7 +54,6 @@ namespace Ejecucion
             {
                 reproduciendo = false;
                 btnPlay.Text = "▶";
-                //player.Stop();
                 player2.controls.pause();
                 // guardamos la cancion actual en el historial
                 //historial.Apilar(primero.dato);
@@ -84,26 +82,27 @@ namespace Ejecucion
                 MostrarLista();
             }
         }
-        private void MostrarLista()
+        public void MostrarLista()
         {
             lbListadereproduccion.Items.Clear();
-            Nodo temp = playlist.primero;
 
             if (playlist.primero == null)
             {
                 return;
             }
-
+            Nodo temp = playlist.primero;
             do
             {
-                lbListadereproduccion.Items.Add(temp.dato.Ruta);
+                lbListadereproduccion.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
         }
         
         private void btnSiguiente_Click(object sender, EventArgs e)
-        { }
+        {
+           
+        }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
@@ -115,16 +114,10 @@ namespace Ejecucion
 
         private void btnPlayList1_Click(object sender, EventArgs e)
         {
-            
         }
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void flowLayoutPanelListaReproduccion_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         private void lbListadereproduccion_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,7 +133,22 @@ namespace Ejecucion
         private void btnRegistrarCancion_Click(object sender, EventArgs e)
         {
             RegistroCanciones.Form1 rc = new RegistroCanciones.Form1();
-            rc.Show();
+
+            if (rc.ShowDialog() == DialogResult.OK)       // ← espera a que cierre
+            {
+                playlist.IngresarFinal(rc.CancionRegistrada);  // ← agrega a tu lista
+                MostrarLista();                                // ← refresca el ListBox
+            }
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void flowLayoutPanelListaReproduccion_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

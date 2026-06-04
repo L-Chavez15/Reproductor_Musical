@@ -39,7 +39,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbGuardaren = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,18 +149,18 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "GUARDAR EN :";
             // 
-            // comboBox1
+            // cmbGuardaren
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbGuardaren.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGuardaren.FormattingEnabled = true;
+            this.cmbGuardaren.Items.AddRange(new object[] {
             "Rock",
             "Regueton",
             "Cumbia"});
-            this.comboBox1.Location = new System.Drawing.Point(164, 237);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 29);
-            this.comboBox1.TabIndex = 9;
+            this.cmbGuardaren.Location = new System.Drawing.Point(164, 237);
+            this.cmbGuardaren.Name = "cmbGuardaren";
+            this.cmbGuardaren.Size = new System.Drawing.Size(185, 29);
+            this.cmbGuardaren.TabIndex = 9;
             // 
             // Form1
             // 
@@ -168,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(434, 411);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbGuardaren);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnBuscar);
@@ -202,7 +202,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbGuardaren;
     }
 }
 

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,8 +16,10 @@ namespace RegistroCanciones
     public partial class Form1 : Form
     {
         private ListaCircular playlist = new ListaCircular();
-        private Cola cola = new Cola();
         private Pila historial = new Pila();
+
+        private string ruta = "";
+        public Musica CancionRegistrada { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -43,14 +46,21 @@ namespace RegistroCanciones
         {
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
-                Musica nuevaCancion = new Musica();
-                nuevaCancion.Ruta = openFileDialog2.FileName;
-                //playlist.IngresarFinal(nuevaCancion);
-                //MostrarLista();
+                ruta = openFileDialog2.FileName;
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Musica RCancion = new Musica();
+            RCancion.Nombre = txtNombre.Text;
+            RCancion.Artista = txtArtista.Text;
+            RCancion.genero=cmbGuardaren.Text;
+            RCancion.Ruta = ruta;
+            CancionRegistrada = RCancion;
+
+            MessageBox.Show("¡Canción registrada correctamente!");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
 
         }
     }

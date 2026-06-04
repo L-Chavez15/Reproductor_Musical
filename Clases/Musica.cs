@@ -4,8 +4,7 @@
     {
         public string Nombre;
         public string Artista;
-        public int Apublicacion;
-        public float duracion;
+        public string genero;
         public string Ruta;
         public Musica()
         {

@@ -58,7 +58,6 @@ namespace Clases
                 }
                 temp = temp.sig;
             }
-            Console.WriteLine("Persona no encontrada");
         }
         public void Eliminar(string bus)
         {
