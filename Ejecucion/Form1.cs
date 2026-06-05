@@ -10,6 +10,7 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Forms;
 using WMPLib;
 
@@ -24,7 +25,8 @@ namespace Ejecucion
         WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
 
         private bool reproduciendo = false;
-        
+        private Nodo nodoActual = null;
+
 
         public Form1()
         {
@@ -93,7 +95,8 @@ namespace Ejecucion
             Nodo temp = playlist.primero;
             do
             {
-                lbListadereproduccion.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
+                lbListadereproduccion.Items.Add(temp.dato.Ruta);
+                //lbListadereproduccion.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
@@ -101,11 +104,30 @@ namespace Ejecucion
         
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-           
+            if (nodoActual == null || playlist.primero == null) return;
+
+            nodoActual = nodoActual.sig;  
+
+            CancionActual();
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
+            if (nodoActual == null || playlist.primero == null) return;
+
+            nodoActual = nodoActual.ant;  
+
+            CancionActual();
+        }
+        private void CancionActual()
+        {
+            if (playlist.primero != null)
+            {
+                player2.URL = playlist.primero.dato.Ruta;
+                player2.controls.play();
+                reproduciendo = true;
+
+            }
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
