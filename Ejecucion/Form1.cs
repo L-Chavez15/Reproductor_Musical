@@ -96,8 +96,7 @@ namespace Ejecucion
             Nodo temp = playlist.primero;
             do
             {
-                //lbListadereproduccion.Items.Add(temp.dato.Ruta);
-                lbListadereproduccion.Items.Add(temp.dato.Nombre.ToUpper() + "\t-\t" + temp.dato.Artista.ToUpper());
+                lbListadereproduccion.Items.Add(temp.dato);
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
@@ -105,19 +104,44 @@ namespace Ejecucion
         
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            nodoActual = nodoActual.sig;  
-            CancionActual();
+            if (nodoActual != null)
+            {
+                historial.Apilar(nodoActual.dato);
+                nodoActual = nodoActual.sig;
+                player2.URL = nodoActual.dato.Ruta;
+                player2.controls.play();
+            }
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            nodoActual = nodoActual.ant;  
-            CancionActual();
+            Musica anterior = historial.Desapilar();
+
+            if (anterior == null)
+                return;
+
+            Nodo temp = playlist.primero;
+
+            do
+            {
+                if (temp.dato.Ruta == anterior.Ruta)
+                {
+                    nodoActual = temp;
+                    break;
+                }
+
+                temp = temp.sig;
+
+            } while (temp != playlist.primero);
+
+            player2.URL = nodoActual.dato.Ruta;
+            player2.controls.play();
         }
         private void CancionActual()
         {
             if (playlist.primero != null)
             {
+                historial.Apilar(nodoActual.dato);
                 player2.URL = nodoActual.dato.Ruta;
                 player2.controls.play();
                 reproduciendo = true;
@@ -145,7 +169,14 @@ namespace Ejecucion
             //player2.controls.play();
             //reproduciendo = true;
             //btnPlay.Text = "||";
-            lbListadereproduccion.SelectedItem.ToString();
+            //lbListadereproduccion.SelectedItem.ToString();
+            Musica cancion = (Musica)lbListadereproduccion.SelectedItem;
+
+            player2.URL = cancion.Ruta;
+            player2.controls.play();
+
+            reproduciendo = true;
+            btnPlay.Text = "||";
 
 
         }
@@ -153,7 +184,11 @@ namespace Ejecucion
         private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
             Form2 rc = new Form2(ref ld);
-            rc.ShowDialog();
+            if (rc.ShowDialog() == DialogResult.OK)
+            {
+                playlist.IngresarFinal(rc.CancionRegistrada);
+                MostrarLista();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
