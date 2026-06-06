@@ -20,6 +20,7 @@ namespace Ejecucion
     {
         public ListaCircular playlist = new ListaCircular();
         private Pila historial = new Pila();
+        public ListaDoble ld= new ListaDoble();
 
         //SoundPlayer player = new SoundPlayer();
         WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
@@ -95,8 +96,8 @@ namespace Ejecucion
             Nodo temp = playlist.primero;
             do
             {
-                lbListadereproduccion.Items.Add(temp.dato.Ruta);
-                //lbListadereproduccion.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
+                //lbListadereproduccion.Items.Add(temp.dato.Ruta);
+                lbListadereproduccion.Items.Add(temp.dato.Nombre.ToUpper() + "\t-\t" + temp.dato.Artista.ToUpper());
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
@@ -104,26 +105,20 @@ namespace Ejecucion
         
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (nodoActual == null || playlist.primero == null) return;
-
             nodoActual = nodoActual.sig;  
-
             CancionActual();
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            if (nodoActual == null || playlist.primero == null) return;
-
             nodoActual = nodoActual.ant;  
-
             CancionActual();
         }
         private void CancionActual()
         {
             if (playlist.primero != null)
             {
-                player2.URL = playlist.primero.dato.Ruta;
+                player2.URL = nodoActual.dato.Ruta;
                 player2.controls.play();
                 reproduciendo = true;
 
@@ -146,21 +141,18 @@ namespace Ejecucion
         {
             //player= new SoundPlayer(lbListadereproduccion.SelectedItem.ToString());
             //player.Play();
-            player2.URL = lbListadereproduccion.SelectedItem.ToString();
-            player2.controls.play();
-            reproduciendo = true;
+            //player2.URL = lbListadereproduccion.SelectedItem.ToString();
+            //player2.controls.play();
+            //reproduciendo = true;
+            //btnPlay.Text = "||";
+            lbListadereproduccion.SelectedItem.ToString();
 
         }
 
-        private void btnRegistrarCancion_Click(object sender, EventArgs e)
+        private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
-            RegistroCanciones.Form1 rc = new RegistroCanciones.Form1();
+            Form2 rc = new Form2(ref ld);
 
-            if (rc.ShowDialog() == DialogResult.OK)       // ← espera a que cierre
-            {
-                playlist.IngresarFinal(rc.CancionRegistrada);  // ← agrega a tu lista
-                MostrarLista();                                // ← refresca el ListBox
-            }
 
         }
 

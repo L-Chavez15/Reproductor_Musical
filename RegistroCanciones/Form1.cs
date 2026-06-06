@@ -15,11 +15,10 @@ namespace RegistroCanciones
 {
     public partial class Form1 : Form
     {
-        private ListaCircular playlist = new ListaCircular();
-        private Pila historial = new Pila();
-
         private string ruta = "";
-        public Musica CancionRegistrada { get; set; }
+        public Musica CancionRegistrada;
+        public ListaDoble ld = new ListaDoble();
+        private Arbol abb = new Arbol();
         public Form1()
         {
             InitializeComponent();
@@ -51,17 +50,33 @@ namespace RegistroCanciones
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            /*if (abb.Buscar(abb.raizPrincipal, txtNombre.Text))
+            {
+                MessageBox.Show("La canción ya está registrada.");
+                return;
+            }*/
             Musica RCancion = new Musica();
             RCancion.Nombre = txtNombre.Text;
             RCancion.Artista = txtArtista.Text;
-            RCancion.genero=cmbGuardaren.Text;
+            RCancion.genero = cmbGuardaren.Text;
             RCancion.Ruta = ruta;
             CancionRegistrada = RCancion;
+            ld.Ingresar(RCancion);
 
             MessageBox.Show("¡Canción registrada correctamente!");
             this.DialogResult = DialogResult.OK;
             this.Close();
 
         }
+        private void MostrarLista()
+        {
+            Nodo temp = ld.primero;
+            while (temp != null)
+            {
+                MessageBox.Show(temp.dato.ToString());
+                temp = temp.sig;
+            }
+        }
     }
+
 }

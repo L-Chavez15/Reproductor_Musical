@@ -9,7 +9,7 @@ namespace Clases
 {
     public class Arbol
     {
-        public Nodo raizPrinciola = null;
+        public Nodo raizPrincipal = null;
 
         public void Insertar(ref Nodo raiz, Musica m)
         {
@@ -25,13 +25,17 @@ namespace Clases
                 {
                     Insertar(ref raiz.izquierda, m);
                 }
-                else
+                else if (string.Compare(m.Nombre, raiz.dato.Nombre) > 0)
                 {
                     Insertar(ref raiz.derecha, m);
                 }
+                else
+                {
+                    MessageBox.Show("Canción ya registrada");
+                }
             }
         }
-        public void Buscar(Nodo raiz, Musica m)
+        public void Buscar(Nodo raiz, string nombre)
         {
             if (raiz == null)
             {
@@ -39,13 +43,13 @@ namespace Clases
             }
             else
             {
-                if (string.Compare(m.Nombre, raiz.dato.Nombre) < 0)
+                if (string.Compare(nombre, raiz.dato.Nombre) < 0)
                 {
-                    Buscar(raiz.izquierda, m);
+                    Buscar(raiz.izquierda, nombre);
                 }
-                else if (string.Compare(m.Nombre, raiz.dato.Nombre) > 0)
+                else if (string.Compare(nombre, raiz.dato.Nombre) > 0)
                 {
-                    Buscar(raiz.derecha, m);
+                    Buscar(raiz.derecha, nombre);
                 }
                 else
                 {
