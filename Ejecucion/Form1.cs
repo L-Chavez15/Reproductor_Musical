@@ -147,13 +147,13 @@ namespace Ejecucion
             //btnPlay.Text = "||";
             lbListadereproduccion.SelectedItem.ToString();
 
+
         }
 
         private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
             Form2 rc = new Form2(ref ld);
-
-
+            rc.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
