@@ -107,7 +107,9 @@ namespace Ejecucion
             if (nodoActual != null)
             {
                 historial.Apilar(nodoActual.dato);
+                MostrarHistorial();
                 nodoActual = nodoActual.sig;
+                CancionActual();
                 player2.URL = nodoActual.dato.Ruta;
                 player2.controls.play();
             }
@@ -148,6 +150,25 @@ namespace Ejecucion
 
             }
         }
+        private void MostrarHistorial()
+        {
+            flowLayoutPanelCola.Controls.Clear();
+
+            Nodo temp = historial.cima;
+
+            while (temp != null)
+            {
+                Label lbl = new Label();
+
+                lbl.AutoSize = true;
+                lbl.ForeColor = Color.White;
+                lbl.Text = temp.dato.Artista + " - " + temp.dato.Nombre;
+
+                flowLayoutPanelCola.Controls.Add(lbl);
+
+                temp = temp.sig;
+            }
+        }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
@@ -172,6 +193,26 @@ namespace Ejecucion
             //lbListadereproduccion.SelectedItem.ToString();
             Musica cancion = (Musica)lbListadereproduccion.SelectedItem;
 
+            if (nodoActual != null)
+            {
+                historial.Apilar(nodoActual.dato);
+                MostrarHistorial();
+            }
+
+            Nodo temp = playlist.primero;
+
+            do
+            {
+                if (temp.dato.Ruta == cancion.Ruta)
+                {
+                    nodoActual = temp;
+                    break;
+                }
+
+                temp = temp.sig;
+
+            } while (temp != playlist.primero);
+
             player2.URL = cancion.Ruta;
             player2.controls.play();
 
@@ -180,6 +221,7 @@ namespace Ejecucion
 
 
         }
+
 
         private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
