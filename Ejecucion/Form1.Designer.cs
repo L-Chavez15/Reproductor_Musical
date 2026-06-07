@@ -41,9 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelRecomendaciones = new System.Windows.Forms.FlowLayoutPanel();
             this.lbListaReproduccion = new System.Windows.Forms.Label();
             this.flowLayoutPanelCola = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbHistorial = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelCentro = new System.Windows.Forms.Panel();
             this.btnArchivos = new System.Windows.Forms.Button();
@@ -56,10 +56,11 @@
             this.panelCancion = new System.Windows.Forms.Panel();
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbBarra = new System.Windows.Forms.TrackBar();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
+            this.flowLayoutPanelCola.SuspendLayout();
             this.panelCentro.SuspendLayout();
             this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -249,7 +250,6 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
-            this.panelDerecho.Controls.Add(this.flowLayoutPanelRecomendaciones);
             this.panelDerecho.Controls.Add(this.lbListaReproduccion);
             this.panelDerecho.Controls.Add(this.flowLayoutPanelCola);
             this.panelDerecho.Controls.Add(this.label4);
@@ -259,21 +259,13 @@
             this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
             // 
-            // flowLayoutPanelRecomendaciones
-            // 
-            this.flowLayoutPanelRecomendaciones.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelRecomendaciones.Location = new System.Drawing.Point(8, 382);
-            this.flowLayoutPanelRecomendaciones.Name = "flowLayoutPanelRecomendaciones";
-            this.flowLayoutPanelRecomendaciones.Size = new System.Drawing.Size(200, 226);
-            this.flowLayoutPanelRecomendaciones.TabIndex = 3;
-            // 
             // lbListaReproduccion
             // 
             this.lbListaReproduccion.AutoSize = true;
             this.lbListaReproduccion.BackColor = System.Drawing.Color.Transparent;
             this.lbListaReproduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbListaReproduccion.ForeColor = System.Drawing.Color.White;
-            this.lbListaReproduccion.Location = new System.Drawing.Point(18, 337);
+            this.lbListaReproduccion.Location = new System.Drawing.Point(18, 456);
             this.lbListaReproduccion.Name = "lbListaReproduccion";
             this.lbListaReproduccion.Size = new System.Drawing.Size(168, 25);
             this.lbListaReproduccion.TabIndex = 2;
@@ -282,11 +274,22 @@
             // flowLayoutPanelCola
             // 
             this.flowLayoutPanelCola.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelCola.Controls.Add(this.lbHistorial);
             this.flowLayoutPanelCola.Location = new System.Drawing.Point(8, 61);
             this.flowLayoutPanelCola.Name = "flowLayoutPanelCola";
-            this.flowLayoutPanelCola.Size = new System.Drawing.Size(209, 252);
+            this.flowLayoutPanelCola.Size = new System.Drawing.Size(209, 361);
             this.flowLayoutPanelCola.TabIndex = 1;
             this.flowLayoutPanelCola.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelCola_Paint);
+            // 
+            // lbHistorial
+            // 
+            this.lbHistorial.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lbHistorial.ForeColor = System.Drawing.Color.Transparent;
+            this.lbHistorial.FormattingEnabled = true;
+            this.lbHistorial.Location = new System.Drawing.Point(3, 3);
+            this.lbHistorial.Name = "lbHistorial";
+            this.lbHistorial.Size = new System.Drawing.Size(197, 355);
+            this.lbHistorial.TabIndex = 0;
             // 
             // label4
             // 
@@ -431,10 +434,6 @@
             this.lblCancion.TabIndex = 4;
             this.lblCancion.Text = "Cancion";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // tbBarra
             // 
             this.tbBarra.Location = new System.Drawing.Point(185, 13);
@@ -443,6 +442,10 @@
             this.tbBarra.Size = new System.Drawing.Size(10, 45);
             this.tbBarra.TabIndex = 3;
             this.tbBarra.TickStyle = System.Windows.Forms.TickStyle.None;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -464,6 +467,7 @@
             this.PanelIzquierdo.PerformLayout();
             this.panelDerecho.ResumeLayout(false);
             this.panelDerecho.PerformLayout();
+            this.flowLayoutPanelCola.ResumeLayout(false);
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
             this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
@@ -491,7 +495,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRecomendaciones;
         private System.Windows.Forms.Label lbListaReproduccion;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCola;
         private System.Windows.Forms.Label label4;
@@ -508,6 +511,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPlaylist3;
         private System.Windows.Forms.TrackBar tbBarra;
+        private System.Windows.Forms.ListBox lbHistorial;
     }
 }
 

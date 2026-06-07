@@ -157,7 +157,7 @@ namespace Ejecucion
         }
         private void MostrarHistorial()
         {
-            flowLayoutPanelCola.Controls.Clear();
+            lbHistorial.Items.Clear();
 
             Nodo temp = historial.cima;
 
@@ -169,7 +169,7 @@ namespace Ejecucion
                 lbl.ForeColor = Color.White;
                 lbl.Text = temp.dato.Artista + " - " + temp.dato.Nombre+"\n";
 
-                flowLayoutPanelCola.Controls.Add(lbl);
+                lbHistorial.Items.Add(lbl.Text);
 
                 temp = temp.sig;
             }
