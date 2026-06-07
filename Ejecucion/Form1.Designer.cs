@@ -56,8 +56,8 @@
             this.panelCancion = new System.Windows.Forms.Panel();
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
-            this.tbBarra = new System.Windows.Forms.TrackBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tbBarra = new System.Windows.Forms.TrackBar();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -345,7 +345,7 @@
             this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
             this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
             this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
-            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(365, 381);
+            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(369, 426);
             this.flowLayoutPanelListaReproduccion.TabIndex = 2;
             this.flowLayoutPanelListaReproduccion.WrapContents = false;
             this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
@@ -358,7 +358,7 @@
             this.lbListadereproduccion.ItemHeight = 15;
             this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
             this.lbListadereproduccion.Name = "lbListadereproduccion";
-            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 364);
+            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 409);
             this.lbListadereproduccion.TabIndex = 6;
             this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
             // 
@@ -431,18 +431,18 @@
             this.lblCancion.TabIndex = 4;
             this.lblCancion.Text = "Cancion";
             // 
-            // tbBarra
-            // 
-            this.tbBarra.Location = new System.Drawing.Point(233, 3);
-            this.tbBarra.Maximum = 100;
-            this.tbBarra.Name = "tbBarra";
-            this.tbBarra.Size = new System.Drawing.Size(329, 45);
-            this.tbBarra.TabIndex = 3;
-            this.tbBarra.TickStyle = System.Windows.Forms.TickStyle.None;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // tbBarra
+            // 
+            this.tbBarra.Location = new System.Drawing.Point(185, 13);
+            this.tbBarra.Maximum = 100;
+            this.tbBarra.Name = "tbBarra";
+            this.tbBarra.Size = new System.Drawing.Size(10, 45);
+            this.tbBarra.TabIndex = 3;
+            this.tbBarra.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // Form1
             // 
@@ -485,7 +485,6 @@
         private System.Windows.Forms.Panel panelDerecho;
         private System.Windows.Forms.Panel panelCentro;
         private System.Windows.Forms.Panel panelCancion;
-        private System.Windows.Forms.TrackBar tbBarra;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -508,6 +507,7 @@
         private System.Windows.Forms.Button btnRegistrarCancion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPlaylist3;
+        private System.Windows.Forms.TrackBar tbBarra;
     }
 }
 

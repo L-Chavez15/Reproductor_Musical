@@ -106,12 +106,16 @@ namespace Ejecucion
         {
             if (nodoActual != null)
             {
-                historial.Apilar(nodoActual.dato);
+                /*historial.Apilar(nodoActual.dato);
                 MostrarHistorial();
                 nodoActual = nodoActual.sig;
                 CancionActual();
                 player2.URL = nodoActual.dato.Ruta;
-                player2.controls.play();
+                player2.controls.play();*/
+                historial.Apilar(nodoActual.dato);
+                nodoActual = nodoActual.sig;
+                CancionActual();
+                MostrarHistorial();
             }
         }
 
@@ -120,7 +124,9 @@ namespace Ejecucion
             Musica anterior = historial.Desapilar();
 
             if (anterior == null)
-                return;
+            {
+            return;
+            }
 
             Nodo temp = playlist.primero;
 
@@ -136,18 +142,17 @@ namespace Ejecucion
 
             } while (temp != playlist.primero);
 
-            player2.URL = nodoActual.dato.Ruta;
-            player2.controls.play();
+            CancionActual();
+            MostrarHistorial();
         }
         private void CancionActual()
         {
             if (playlist.primero != null)
             {
-                historial.Apilar(nodoActual.dato);
                 player2.URL = nodoActual.dato.Ruta;
                 player2.controls.play();
                 reproduciendo = true;
-
+                btnPlay.Text = "||";
             }
         }
         private void MostrarHistorial()
@@ -162,7 +167,7 @@ namespace Ejecucion
 
                 lbl.AutoSize = true;
                 lbl.ForeColor = Color.White;
-                lbl.Text = temp.dato.Artista + " - " + temp.dato.Nombre;
+                lbl.Text = temp.dato.Artista + " - " + temp.dato.Nombre+"\n";
 
                 flowLayoutPanelCola.Controls.Add(lbl);
 
@@ -184,13 +189,21 @@ namespace Ejecucion
 
         private void lbListadereproduccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //player= new SoundPlayer(lbListadereproduccion.SelectedItem.ToString());
-            //player.Play();
-            //player2.URL = lbListadereproduccion.SelectedItem.ToString();
-            //player2.controls.play();
-            //reproduciendo = true;
-            //btnPlay.Text = "||";
+            /*player= new SoundPlayer(lbListadereproduccion.SelectedItem.ToString());
+            player.Play();
+            player2.URL = lbListadereproduccion.SelectedItem.ToString();
+            player2.controls.play();
+            reproduciendo = true;
+            btnPlay.Text = "||";*/
             //lbListadereproduccion.SelectedItem.ToString();
+
+            /*
+             Musica cancion = (Musica)lbListadereproduccion.SelectedItem;
+             player2.URL = cancion.Ruta;
+             player2.controls.play();
+             reproduciendo = true;
+             btnPlay.Text = "||";
+            */
             Musica cancion = (Musica)lbListadereproduccion.SelectedItem;
 
             if (nodoActual != null)
@@ -213,12 +226,8 @@ namespace Ejecucion
 
             } while (temp != playlist.primero);
 
-            player2.URL = cancion.Ruta;
-            player2.controls.play();
-
-            reproduciendo = true;
-            btnPlay.Text = "||";
-
+            CancionActual();
+            MostrarHistorial();
 
         }
 

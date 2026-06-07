@@ -11,7 +11,7 @@
         }
         public override string ToString()
         {
-            return Artista.ToUpper() + " - " + Nombre.ToUpper();
+            return " "+Nombre.ToUpper() + " - " + Artista.ToUpper();
         }
     }
 }
