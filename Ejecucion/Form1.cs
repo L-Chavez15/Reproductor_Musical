@@ -177,6 +177,8 @@ namespace Ejecucion
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            lbListadereproduccion.Items.Clear();
+            lbHistorial.Items.Clear();
         }
 
         private void btnPlayList1_Click(object sender, EventArgs e)
@@ -204,7 +206,7 @@ namespace Ejecucion
              reproduciendo = true;
              btnPlay.Text = "||";
             */
-            Musica cancion = (Musica)lbListadereproduccion.SelectedItem;
+            Musica cancion = (Musica)lbListadereproduccion.SelectedItem;//casteamos el item seleccionado a Musica para obtener su ruta y reproducirla.
 
             if (nodoActual != null)
             {
