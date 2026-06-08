@@ -21,7 +21,9 @@ namespace Ejecucion
         //Declaramos 3 estructuras de datos: 
         public ListaCircular playlist = new ListaCircular();//una lista circular para la playlist
         private Pila historial = new Pila();//una pila para el historial 
-        public ListaDoble ld= new ListaDoble();//una lista doble para las canciones registradas
+        public ListaDoble rock= new ListaDoble();//una lista doble para las canciones registradas
+        public ListaDoble cumbia = new ListaDoble();//lista doble para canciones de cumbia
+        public ListaDoble regueton = new ListaDoble();//lista doble para canciones de regueton
 
         //SoundPlayer player = new SoundPlayer();
         WindowsMediaPlayer player2 = new WindowsMediaPlayer();//Reproductor de MP3
@@ -82,10 +84,10 @@ namespace Ejecucion
                 Musica nuevaCancion = new Musica();
                 nuevaCancion.Ruta = openFileDialog1.FileName;
                 playlist.IngresarFinal(nuevaCancion);
-                MostrarLista();
+                //MostrarLista();
             }
         }
-        public void MostrarLista()
+        /*public void MostrarLista()
         {
             lbListadereproduccion.Items.Clear();
 
@@ -100,7 +102,7 @@ namespace Ejecucion
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
-        }
+        }*/
         
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
@@ -153,6 +155,8 @@ namespace Ejecucion
                 player2.controls.play();
                 reproduciendo = true;
                 btnPlay.Text = "||";
+                lblArtista.Text = nodoActual.dato.Artista.ToUpper();
+                lblCancion.Text = nodoActual.dato.Nombre.ToUpper();
             }
         }
         private void MostrarHistorial()
@@ -183,7 +187,19 @@ namespace Ejecucion
 
         private void btnPlayList1_Click(object sender, EventArgs e)
         {
+            lbListadereproduccion.Items.Clear();
+            if (rock.primero == null)
+            {
+                return;
+            }
+            Nodo temp = rock.primero;
+            do
+            {
+                lbListadereproduccion.Items.Add(temp.dato);
+            } while (temp!=rock.primero);
+
         }
+        
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
 
@@ -236,11 +252,11 @@ namespace Ejecucion
 
         private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
-            Form2 rc = new Form2(ref ld);
+            Form2 rc = new Form2(ref rock, ref cumbia, ref regueton);
             if (rc.ShowDialog() == DialogResult.OK)
             {
                 playlist.IngresarFinal(rc.CancionRegistrada);
-                MostrarLista();
+                //MostrarLista();
             }
         }
 

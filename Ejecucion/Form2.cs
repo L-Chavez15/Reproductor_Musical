@@ -14,14 +14,16 @@ namespace Ejecucion
 {
     public partial class Form2 : Form
     {
-        ListaDoble ld;
+        ListaDoble rock,cumbia, regueton;
         public Musica CancionRegistrada;
         private string ruta = "";
 
-        public Form2(ref ListaDoble ld)
+        public Form2(ref ListaDoble rock, ref ListaDoble cumbia, ref ListaDoble regueton)
         {
             InitializeComponent();
-            this.ld = ld;
+            this.rock = rock;
+            this.cumbia = cumbia;
+            this.regueton = regueton;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -57,7 +59,22 @@ namespace Ejecucion
             RCancion.genero = cmbGenero.Text;
             RCancion.Ruta = ruta;
             CancionRegistrada = RCancion;
-            ld.Ingresar(RCancion);
+            switch (RCancion.genero)
+            {
+                case "Rock":
+                    //guardar en la lista de rock
+                    rock.Ingresar(RCancion);
+                    break;
+                case "Cumbia":
+                    cumbia.Ingresar(RCancion);
+                    break;
+                case "Reguetón":
+                    regueton.Ingresar(RCancion);
+                    break;
+                default:
+                    break;
+            }
+            //ld.Ingresar(RCancion);
 
             MessageBox.Show("¡Canción registrada correctamente!");
             this.DialogResult = DialogResult.OK;
