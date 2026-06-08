@@ -56,7 +56,6 @@
             this.panelCancion = new System.Windows.Forms.Panel();
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
-            this.tbBarra = new System.Windows.Forms.TrackBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
@@ -65,7 +64,6 @@
             this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelCancion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBarra)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSiguiente
@@ -406,7 +404,6 @@
             this.panelCancion.Controls.Add(this.btnPlay);
             this.panelCancion.Controls.Add(this.btnSiguiente);
             this.panelCancion.Controls.Add(this.btnAnterior);
-            this.panelCancion.Controls.Add(this.tbBarra);
             this.panelCancion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelCancion.Location = new System.Drawing.Point(0, 563);
             this.panelCancion.Name = "panelCancion";
@@ -433,15 +430,6 @@
             this.lblCancion.Size = new System.Drawing.Size(57, 17);
             this.lblCancion.TabIndex = 4;
             this.lblCancion.Text = "Cancion";
-            // 
-            // tbBarra
-            // 
-            this.tbBarra.Location = new System.Drawing.Point(185, 13);
-            this.tbBarra.Maximum = 100;
-            this.tbBarra.Name = "tbBarra";
-            this.tbBarra.Size = new System.Drawing.Size(10, 45);
-            this.tbBarra.TabIndex = 3;
-            this.tbBarra.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // openFileDialog1
             // 
@@ -475,7 +463,6 @@
             this.panel5.PerformLayout();
             this.panelCancion.ResumeLayout(false);
             this.panelCancion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBarra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -510,7 +497,6 @@
         private System.Windows.Forms.Button btnRegistrarCancion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPlaylist3;
-        private System.Windows.Forms.TrackBar tbBarra;
         private System.Windows.Forms.ListBox lbHistorial;
     }
 }

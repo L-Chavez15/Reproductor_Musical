@@ -16,7 +16,6 @@ namespace Ejecucion
     {
         ListaDoble ld;
         public Musica CancionRegistrada;
-        private Arbol abb = new Arbol();
         private string ruta = "";
 
         public Form2(ref ListaDoble ld)
@@ -59,7 +58,6 @@ namespace Ejecucion
             RCancion.Ruta = ruta;
             CancionRegistrada = RCancion;
             ld.Ingresar(RCancion);
-            abb.Insertar(ref abb.raizPrincipal,  RCancion);
 
             MessageBox.Show("¡Canción registrada correctamente!");
             this.DialogResult = DialogResult.OK;

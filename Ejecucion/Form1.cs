@@ -18,16 +18,16 @@ namespace Ejecucion
 {
     public partial class Form1 : Form
     {
-        public ListaCircular playlist = new ListaCircular();
-        private Pila historial = new Pila();
-        public ListaDoble ld= new ListaDoble();
+        //Declaramos 3 estructuras de datos: 
+        public ListaCircular playlist = new ListaCircular();//una lista circular para la playlist
+        private Pila historial = new Pila();//una pila para el historial 
+        public ListaDoble ld= new ListaDoble();//una lista doble para las canciones registradas
 
         //SoundPlayer player = new SoundPlayer();
-        WindowsMediaPlayer player2= new WindowsMediaPlayer();//Reproductor de MP3
+        WindowsMediaPlayer player2 = new WindowsMediaPlayer();//Reproductor de MP3
 
-        private bool reproduciendo = false;
-        private Nodo nodoActual = null;
-
+        private bool reproduciendo = false;//indica si se esta reproduciendo una cancion o no
+        private Nodo nodoActual = null;//indica la cancion actual que se esta reproduciendo
 
         public Form1()
         {
@@ -49,7 +49,7 @@ namespace Ejecucion
             panel5.BackColor = Color.FromArgb(42, 42, 42);
 
             // TrackBar
-            tbBarra.BackColor = Color.FromArgb(40, 40, 40);
+            //tbBarra.BackColor = Color.FromArgb(40, 40, 40);
         }
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -96,7 +96,7 @@ namespace Ejecucion
             Nodo temp = playlist.primero;
             do
             {
-                lbListadereproduccion.Items.Add(temp.dato);
+                lbListadereproduccion.Items.Add(temp.dato); // se debe castear, envia dato completo de música
                 temp = temp.sig;
 
             } while (temp != playlist.primero);
