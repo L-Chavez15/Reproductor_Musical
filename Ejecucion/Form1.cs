@@ -167,13 +167,7 @@ namespace Ejecucion
 
             while (temp != null)
             {
-                Label lbl = new Label();
-
-                lbl.AutoSize = true;
-                lbl.ForeColor = Color.White;
-                lbl.Text = temp.dato.Artista + " - " + temp.dato.Nombre+"\n";
-
-                lbHistorial.Items.Add(lbl.Text);
+                lbHistorial.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
 
                 temp = temp.sig;
             }
@@ -188,32 +182,32 @@ namespace Ejecucion
         private void btnPlayList1_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            if (rock.primero == null)
+            /*if (rock.primero == null)
             {
                 return;
-            }
+            }*/
             Nodo temp = rock.primero;
-            do
+            while (temp != null)
             {
                 lbListadereproduccion.Items.Add(temp.dato);
                 temp = temp.sig;
-            } while (temp!=rock.primero);
+            }
 
         }
 
         private void btnRegueton_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            if (regueton.primero == null)
+            /*if (regueton.primero == null)
             {
                 return;
-            }
+            }*/
             Nodo temp = regueton.primero;
-            do
+            while (temp != null)
             {
                 lbListadereproduccion.Items.Add(temp.dato);
                 temp = temp.sig;
-            } while (temp != regueton.primero);
+            }
 
         }
 
@@ -221,16 +215,16 @@ namespace Ejecucion
         private void btnCumbia_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            if (cumbia.primero == null)
+            /*if (cumbia.primero == null)
             {
                 return;
-            }
+            }*/
             Nodo temp = cumbia.primero;
-            do
+            while (temp != null)
             {
                 lbListadereproduccion.Items.Add(temp.dato);
                 temp = temp.sig;
-            } while (temp != cumbia.primero);
+            }
         }
 
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)

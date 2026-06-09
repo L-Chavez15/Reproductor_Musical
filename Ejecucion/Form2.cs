@@ -62,13 +62,12 @@ namespace Ejecucion
             switch (RCancion.genero)
             {
                 case "Rock":
-                    //guardar en la lista de rock
                     rock.Ingresar(RCancion);
                     break;
                 case "Cumbia":
                     cumbia.Ingresar(RCancion);
                     break;
-                case "Reguetón":
+                case "Regueton":
                     regueton.Ingresar(RCancion);
                     break;
                 default:
