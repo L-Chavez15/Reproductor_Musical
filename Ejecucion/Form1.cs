@@ -196,10 +196,43 @@ namespace Ejecucion
             do
             {
                 lbListadereproduccion.Items.Add(temp.dato);
+                temp = temp.sig;
             } while (temp!=rock.primero);
 
         }
-        
+
+        private void btnRegueton_Click(object sender, EventArgs e)
+        {
+            lbListadereproduccion.Items.Clear();
+            if (regueton.primero == null)
+            {
+                return;
+            }
+            Nodo temp = regueton.primero;
+            do
+            {
+                lbListadereproduccion.Items.Add(temp.dato);
+                temp = temp.sig;
+            } while (temp != regueton.primero);
+
+        }
+
+
+        private void btnCumbia_Click(object sender, EventArgs e)
+        {
+            lbListadereproduccion.Items.Clear();
+            if (cumbia.primero == null)
+            {
+                return;
+            }
+            Nodo temp = cumbia.primero;
+            do
+            {
+                lbListadereproduccion.Items.Add(temp.dato);
+                temp = temp.sig;
+            } while (temp != cumbia.primero);
+        }
+
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
 

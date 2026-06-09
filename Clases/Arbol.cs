@@ -60,7 +60,8 @@ namespace Clases
                 }
             }
         }
-        public void Eliminar(ref Nodo raiz, string nombre)
+        
+        /*public void Eliminar(ref Nodo raiz, string nombre)
         {
             if (raiz == null)
             {
@@ -113,6 +114,6 @@ namespace Clases
 
                 Console.WriteLine("Nombre eliminado");
             }
-        }
+        }*/
     }
 }
