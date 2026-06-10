@@ -11,6 +11,52 @@ namespace Clases
     {
         public Nodo raizPrincipal = null;
 
+        public void InsertarUsuario(ref Nodo raiz, Usuario u)
+        {
+            if (raiz == null)
+            {
+                Nodo nuevo = new Nodo();
+                nuevo.datoUsuario = u;
+                raiz = nuevo;
+            }
+            else
+            {
+                if (string.Compare(u.NombreUsuario, raiz.datoUsuario.NombreUsuario) < 0)
+                {
+                    InsertarUsuario(ref raiz.izquierda, u);
+                }
+                else if (string.Compare(u.NombreUsuario, raiz.datoUsuario.NombreUsuario) > 0)
+                {
+                    InsertarUsuario(ref raiz.derecha, u);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ya registrado");
+                }
+            }
+        }
+        public Usuario BuscarUsuario(Nodo raiz, string nombreUsuario)
+        {
+            if (raiz == null)
+            {
+                return null;
+            }
+            else
+            {
+                if (string.Compare(nombreUsuario, raiz.datoUsuario.NombreUsuario) < 0)
+                {
+                    return BuscarUsuario(raiz.izquierda, nombreUsuario);
+                }
+                else if (string.Compare(nombreUsuario, raiz.datoUsuario.NombreUsuario) > 0)
+                {
+                    return BuscarUsuario(raiz.derecha, nombreUsuario);
+                }
+                else
+                {
+                    return raiz.datoUsuario;
+                }
+            }
+        }
         public void Insertar(ref Nodo raiz, Musica m)
         {
             if (raiz == null)
@@ -31,7 +77,7 @@ namespace Clases
                 }
                 else
                 {
-                    MessageBox.Show("Canción ya registrada");
+                    MessageBox.Show("Música ya registrada");
                 }
             }
         }

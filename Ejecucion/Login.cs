@@ -16,7 +16,7 @@ namespace Ejecucion
         Arbol abb = new Arbol();
         public Login()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -31,6 +31,14 @@ namespace Ejecucion
                 MessageBox.Show("Completa todos los campos.");
                 return;
             }
+            
+            Usuario u = new Usuario();
+           u.Nombre = txtNombre.Text;
+           u.NombreUsuario = txtUsuario.Text;
+            u.Contrasena = txtContrasena.Text;
+
+            abb.InsertarUsuario(ref abb.raizPrincipal, u);
+            abb.BuscarUsuario(abb.raizPrincipal, u.NombreUsuario);
         }
     }
 }

@@ -55,6 +55,7 @@
             this.lbHistorial = new System.Windows.Forms.ListBox();
             this.lbListadereproduccion = new System.Windows.Forms.ListBox();
             this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnIniciarSesión = new System.Windows.Forms.Button();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -247,6 +248,7 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
+            this.panelDerecho.Controls.Add(this.btnIniciarSesión);
             this.panelDerecho.Controls.Add(this.lbHistorial);
             this.panelDerecho.Controls.Add(this.label4);
             this.panelDerecho.Dock = System.Windows.Forms.DockStyle.Right;
@@ -412,6 +414,18 @@
             this.flowLayoutPanelListaReproduccion.WrapContents = false;
             this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
             // 
+            // btnIniciarSesión
+            // 
+            this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesión.ForeColor = System.Drawing.Color.DimGray;
+            this.btnIniciarSesión.Location = new System.Drawing.Point(6, 582);
+            this.btnIniciarSesión.Name = "btnIniciarSesión";
+            this.btnIniciarSesión.Size = new System.Drawing.Size(104, 29);
+            this.btnIniciarSesión.TabIndex = 1;
+            this.btnIniciarSesión.Text = "Iniciar Sesión";
+            this.btnIniciarSesión.UseVisualStyleBackColor = true;
+            this.btnIniciarSesión.Click += new System.EventHandler(this.btnIniciarSesión_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,6 +486,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
         private System.Windows.Forms.ListBox lbListadereproduccion;
+        private System.Windows.Forms.Button btnIniciarSesión;
     }
 }
 

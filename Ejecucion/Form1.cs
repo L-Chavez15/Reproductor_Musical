@@ -297,6 +297,11 @@ namespace Ejecucion
             lbListadereproduccion.Items.Add(encontrada);
 
         }
+        private void btnIniciarSesión_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
 
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
@@ -311,5 +316,7 @@ namespace Ejecucion
         {
 
         }
+
+        
     }
 }

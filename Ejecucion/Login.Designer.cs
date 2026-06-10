@@ -76,7 +76,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNombre.Location = new System.Drawing.Point(20, 270);
+            this.txtNombre.Location = new System.Drawing.Point(21, 270);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(456, 27);
             this.txtNombre.TabIndex = 7;
