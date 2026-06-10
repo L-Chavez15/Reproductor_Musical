@@ -20,7 +20,9 @@ namespace Ejecucion
     {
         //Declaramos 3 estructuras de datos: 
         public ListaCircular playlist = new ListaCircular();//una lista circular para la playlist
-        private Pila historial = new Pila();//una pila para el historial 
+        private Pila historial = new Pila();//una pila para el historial
+        public Arbol abb = new Arbol();//un árbol para buscar las canciones
+
         public ListaDoble rock= new ListaDoble();//una lista doble para las canciones registradas
         public ListaDoble cumbia = new ListaDoble();//lista doble para canciones de cumbia
         public ListaDoble regueton = new ListaDoble();//lista doble para canciones de regueton
@@ -167,7 +169,7 @@ namespace Ejecucion
 
             while (temp != null)
             {
-                lbHistorial.Items.Add(temp.dato.Nombre + " - " + temp.dato.Artista);
+                lbHistorial.Items.Add(temp.dato.Nombre.ToUpper() + " - " + temp.dato.Artista.ToUpper());
 
                 temp = temp.sig;
             }
@@ -227,11 +229,6 @@ namespace Ejecucion
             }
         }
 
-        private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void lbListadereproduccion_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*player= new SoundPlayer(lbListadereproduccion.SelectedItem.ToString());
@@ -283,8 +280,27 @@ namespace Ejecucion
             if (rc.ShowDialog() == DialogResult.OK)
             {
                 playlist.IngresarFinal(rc.CancionRegistrada);
+                abb.Insertar(ref abb.raizPrincipal,rc.CancionRegistrada);
                 //MostrarLista();
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Musica encontrada=abb.Buscar(abb.raizPrincipal, txtBuscador.Text);
+            if (encontrada == null)
+            {
+                MessageBox.Show("Canción no encontrada");
+                return;
+            }
+            lbListadereproduccion.Items.Clear();
+            lbListadereproduccion.Items.Add(encontrada);
+
+        }
+
+        private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void label4_Click(object sender, EventArgs e)

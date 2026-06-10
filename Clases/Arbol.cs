@@ -35,28 +35,25 @@ namespace Clases
                 }
             }
         }
-        public void Buscar(Nodo raiz, string nombre)
+        public Musica Buscar(Nodo raiz, string nombre)
         {
             if (raiz == null)
             {
-                Console.WriteLine("DATO NO ENCONTRADO");
+                return null;
             }
             else
             {
                 if (string.Compare(nombre, raiz.dato.Nombre) < 0)
                 {
-                    Buscar(raiz.izquierda, nombre);
+                    return Buscar(raiz.izquierda, nombre);
                 }
                 else if (string.Compare(nombre, raiz.dato.Nombre) > 0)
                 {
-                    Buscar(raiz.derecha, nombre);
+                    return Buscar(raiz.derecha, nombre);
                 }
                 else
                 {
-                    MessageBox.Show("DATO ENCONTRADO");
-                    MessageBox.Show("Nombre: " + raiz.dato.Nombre);
-                    MessageBox.Show("Artista: " + raiz.dato.Artista);
-                    MessageBox.Show("Género: " + raiz.dato.genero);
+                    return raiz.dato;
                 }
             }
         }
