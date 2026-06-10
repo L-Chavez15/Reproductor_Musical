@@ -1,5 +1,4 @@
 <Solution>
   <Project Path="Clases/Clases.csproj" Id="e4c6fbf6-128b-4cac-adc2-7df39e536fa1" />
   <Project Path="Ejecucion/Ejecucion.csproj" Id="0d162877-71cd-4040-85be-ecb3a134b550" />
-  <Project Path="RegistroCanciones/RegistroCanciones.csproj" Id="49fe60c4-fa9e-469e-9cb9-797e6907d9c9" />
 </Solution>

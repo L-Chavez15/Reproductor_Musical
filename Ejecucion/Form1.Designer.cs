@@ -41,15 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
-            this.lbListaReproduccion = new System.Windows.Forms.Label();
-            this.flowLayoutPanelCola = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbHistorial = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelCentro = new System.Windows.Forms.Panel();
             this.btnArchivos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbListadereproduccion = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
@@ -57,13 +51,16 @@
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbHistorial = new System.Windows.Forms.ListBox();
+            this.lbListadereproduccion = new System.Windows.Forms.ListBox();
+            this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
-            this.flowLayoutPanelCola.SuspendLayout();
             this.panelCentro.SuspendLayout();
-            this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelCancion.SuspendLayout();
+            this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSiguiente
@@ -250,58 +247,13 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
-            this.panelDerecho.Controls.Add(this.lbListaReproduccion);
-            this.panelDerecho.Controls.Add(this.flowLayoutPanelCola);
+            this.panelDerecho.Controls.Add(this.lbHistorial);
             this.panelDerecho.Controls.Add(this.label4);
             this.panelDerecho.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelDerecho.Location = new System.Drawing.Point(608, 0);
             this.panelDerecho.Name = "panelDerecho";
             this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
-            // 
-            // lbListaReproduccion
-            // 
-            this.lbListaReproduccion.AutoSize = true;
-            this.lbListaReproduccion.BackColor = System.Drawing.Color.Transparent;
-            this.lbListaReproduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListaReproduccion.ForeColor = System.Drawing.Color.White;
-            this.lbListaReproduccion.Location = new System.Drawing.Point(18, 332);
-            this.lbListaReproduccion.Name = "lbListaReproduccion";
-            this.lbListaReproduccion.Size = new System.Drawing.Size(168, 25);
-            this.lbListaReproduccion.TabIndex = 2;
-            this.lbListaReproduccion.Text = "RECOMENDADAS";
-            // 
-            // flowLayoutPanelCola
-            // 
-            this.flowLayoutPanelCola.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelCola.Controls.Add(this.lbHistorial);
-            this.flowLayoutPanelCola.Location = new System.Drawing.Point(8, 61);
-            this.flowLayoutPanelCola.Name = "flowLayoutPanelCola";
-            this.flowLayoutPanelCola.Size = new System.Drawing.Size(209, 245);
-            this.flowLayoutPanelCola.TabIndex = 1;
-            this.flowLayoutPanelCola.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelCola_Paint);
-            // 
-            // lbHistorial
-            // 
-            this.lbHistorial.BackColor = System.Drawing.SystemColors.WindowText;
-            this.lbHistorial.ForeColor = System.Drawing.Color.Transparent;
-            this.lbHistorial.FormattingEnabled = true;
-            this.lbHistorial.Location = new System.Drawing.Point(3, 3);
-            this.lbHistorial.Name = "lbHistorial";
-            this.lbHistorial.Size = new System.Drawing.Size(197, 225);
-            this.lbHistorial.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "RECIENTES";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelCentro
             // 
@@ -337,33 +289,6 @@
             this.label7.Size = new System.Drawing.Size(231, 30);
             this.label7.TabIndex = 3;
             this.label7.Text = "Lista de reproduccion ";
-            // 
-            // flowLayoutPanelListaReproduccion
-            // 
-            this.flowLayoutPanelListaReproduccion.AutoScroll = true;
-            this.flowLayoutPanelListaReproduccion.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelListaReproduccion.Controls.Add(this.lbListadereproduccion);
-            this.flowLayoutPanelListaReproduccion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelListaReproduccion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
-            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
-            this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
-            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(369, 426);
-            this.flowLayoutPanelListaReproduccion.TabIndex = 2;
-            this.flowLayoutPanelListaReproduccion.WrapContents = false;
-            this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
-            // 
-            // lbListadereproduccion
-            // 
-            this.lbListadereproduccion.BackColor = System.Drawing.SystemColors.Desktop;
-            this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
-            this.lbListadereproduccion.FormattingEnabled = true;
-            this.lbListadereproduccion.ItemHeight = 15;
-            this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
-            this.lbListadereproduccion.Name = "lbListadereproduccion";
-            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 394);
-            this.lbListadereproduccion.TabIndex = 6;
-            this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
             // 
             // panel5
             // 
@@ -438,6 +363,55 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(16, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "RECIENTES";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lbHistorial
+            // 
+            this.lbHistorial.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lbHistorial.ForeColor = System.Drawing.Color.Transparent;
+            this.lbHistorial.FormattingEnabled = true;
+            this.lbHistorial.Location = new System.Drawing.Point(11, 163);
+            this.lbHistorial.Name = "lbHistorial";
+            this.lbHistorial.Size = new System.Drawing.Size(197, 225);
+            this.lbHistorial.TabIndex = 0;
+            // 
+            // lbListadereproduccion
+            // 
+            this.lbListadereproduccion.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
+            this.lbListadereproduccion.FormattingEnabled = true;
+            this.lbListadereproduccion.ItemHeight = 15;
+            this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
+            this.lbListadereproduccion.Name = "lbListadereproduccion";
+            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 409);
+            this.lbListadereproduccion.TabIndex = 6;
+            this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
+            // 
+            // flowLayoutPanelListaReproduccion
+            // 
+            this.flowLayoutPanelListaReproduccion.AutoScroll = true;
+            this.flowLayoutPanelListaReproduccion.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelListaReproduccion.Controls.Add(this.lbListadereproduccion);
+            this.flowLayoutPanelListaReproduccion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelListaReproduccion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
+            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
+            this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
+            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(369, 426);
+            this.flowLayoutPanelListaReproduccion.TabIndex = 2;
+            this.flowLayoutPanelListaReproduccion.WrapContents = false;
+            this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,14 +432,13 @@
             this.PanelIzquierdo.PerformLayout();
             this.panelDerecho.ResumeLayout(false);
             this.panelDerecho.PerformLayout();
-            this.flowLayoutPanelCola.ResumeLayout(false);
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
-            this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelCancion.ResumeLayout(false);
             this.panelCancion.PerformLayout();
+            this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -484,10 +457,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtBuscador;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
-        private System.Windows.Forms.Label lbListaReproduccion;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCola;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblArtista;
         private System.Windows.Forms.Label lblCancion;
         private System.Windows.Forms.Label label7;
@@ -496,11 +465,13 @@
         private System.Windows.Forms.Button btnRegueton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnArchivos;
-        private System.Windows.Forms.ListBox lbListadereproduccion;
         private System.Windows.Forms.Button btnRegistrarCancion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCumbia;
         private System.Windows.Forms.ListBox lbHistorial;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
+        private System.Windows.Forms.ListBox lbListadereproduccion;
     }
 }
 

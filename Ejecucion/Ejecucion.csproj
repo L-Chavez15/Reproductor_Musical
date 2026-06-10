@@ -64,6 +64,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,10 +107,6 @@
     <ProjectReference Include="..\Clases\Clases.csproj">
       <Project>{e4c6fbf6-128b-4cac-adc2-7df39e536fa1}</Project>
       <Name>Clases</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RegistroCanciones\RegistroCanciones.csproj">
-      <Project>{49fe60c4-fa9e-469e-9cb9-797e6907d9c9}</Project>
-      <Name>RegistroCanciones</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
