@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.btnIniciarSesión = new System.Windows.Forms.Button();
             this.lbHistorial = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -249,6 +250,7 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
+            this.panelDerecho.Controls.Add(this.button1);
             this.panelDerecho.Controls.Add(this.lblUsuario);
             this.panelDerecho.Controls.Add(this.btnIniciarSesión);
             this.panelDerecho.Controls.Add(this.lbHistorial);
@@ -259,6 +261,17 @@
             this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(17, 15);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(14, 21);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = " ";
+            // 
             // btnIniciarSesión
             // 
             this.btnIniciarSesión.BackColor = System.Drawing.Color.Transparent;
@@ -266,7 +279,7 @@
             this.btnIniciarSesión.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesión.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesión.Location = new System.Drawing.Point(21, 582);
+            this.btnIniciarSesión.Location = new System.Drawing.Point(11, 582);
             this.btnIniciarSesión.Name = "btnIniciarSesión";
             this.btnIniciarSesión.Size = new System.Drawing.Size(104, 29);
             this.btnIniciarSesión.TabIndex = 1;
@@ -431,16 +444,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // lblUsuario
+            // button1
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(17, 15);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 21);
-            this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuario";
+            this.button1.Location = new System.Drawing.Point(121, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -504,6 +515,7 @@
         private System.Windows.Forms.ListBox lbListadereproduccion;
         private System.Windows.Forms.Button btnIniciarSesión;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }
 

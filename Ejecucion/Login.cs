@@ -50,9 +50,12 @@ namespace Ejecucion
             Usuario u = new Usuario();
             u.NombreUsuario = txtUsuario.Text;
             u.Contrasena = txtContrasena.Text;
+            txtUsuario.Focus();// el cursor vuelve al primer campo
 
             abb.InsertarUsuario(ref abb.raizPrincipal2, u);
             MessageBox.Show("Usuario registrado exitosamente.");
+            txtUsuario.Clear();
+            txtContrasena.Clear();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
