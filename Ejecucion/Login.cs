@@ -57,7 +57,12 @@ namespace Ejecucion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+            Usuario u = abb.BuscarUsuario(abb.raizPrincipal2, txtUsuario.Text);
+            if (u == null)
+            {
+                MessageBox.Show("Usuario no existe");
+                return;
+            }
         }
     }
 }
