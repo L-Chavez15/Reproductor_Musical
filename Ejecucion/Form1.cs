@@ -308,6 +308,11 @@ namespace Ejecucion
                 lblUsuario.Text = "👤 " + lg.UsuarioIngresado.ToUpper();
             }
         }
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            lblUsuario.Text = "";
+            MessageBox.Show("Sesión cerrada");
+        }
 
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
         {
@@ -323,10 +328,6 @@ namespace Ejecucion
 
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            lblUsuario.Text = "";
-            MessageBox.Show("Sesión cerrada");
-        }
+        
     }
 }
