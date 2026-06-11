@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnIniciarSesión = new System.Windows.Forms.Button();
             this.lbHistorial = new System.Windows.Forms.ListBox();
@@ -57,7 +58,6 @@
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -250,7 +250,7 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
-            this.panelDerecho.Controls.Add(this.button1);
+            this.panelDerecho.Controls.Add(this.btnCerrarSesion);
             this.panelDerecho.Controls.Add(this.lblUsuario);
             this.panelDerecho.Controls.Add(this.btnIniciarSesión);
             this.panelDerecho.Controls.Add(this.lbHistorial);
@@ -260,6 +260,20 @@
             this.panelDerecho.Name = "panelDerecho";
             this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(121, 582);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(96, 29);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // lblUsuario
             // 
@@ -277,7 +291,7 @@
             this.btnIniciarSesión.BackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesión.FlatAppearance.BorderSize = 0;
             this.btnIniciarSesión.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesión.ForeColor = System.Drawing.Color.White;
             this.btnIniciarSesión.Location = new System.Drawing.Point(11, 582);
             this.btnIniciarSesión.Name = "btnIniciarSesión";
@@ -444,15 +458,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(121, 582);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,7 +520,7 @@
         private System.Windows.Forms.ListBox lbListadereproduccion;
         private System.Windows.Forms.Button btnIniciarSesión;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }
 

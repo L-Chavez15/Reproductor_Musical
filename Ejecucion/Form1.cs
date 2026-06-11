@@ -323,6 +323,10 @@ namespace Ejecucion
 
         }
 
-        
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            lblUsuario.Text = "";
+            MessageBox.Show("Sesión cerrada");
+        }
     }
 }
