@@ -40,25 +40,24 @@ namespace Ejecucion
                 MessageBox.Show("Completa todos los campos.");
                 return;
             }
+            Usuario existente = abb.BuscarUsuario(abb.raizPrincipal2, txtUsuario.Text);
+            if (existente != null)
+            {
+                MessageBox.Show("Ese usuario ya existe.");
+                return;
+            }
+
+            Usuario u = new Usuario();
+            u.NombreUsuario = txtUsuario.Text;
+            u.Contrasena = txtContrasena.Text;
+
+            abb.InsertarUsuario(ref abb.raizPrincipal2, u);
+            MessageBox.Show("Usuario registrado exitosamente.");
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario u= abb.BuscarUsuario(abb.raizPrincipal2, txtUsuario.Text);
-            if (u == null)
-            {
-                MessageBox.Show("Usuario no existe");
-                return;
-            }
-
-            if (u.Contrasena != txtContrasena.Text)
-            {
-                MessageBox.Show("Contraseña incorrecta");
-                return;
-            }
-            UsuarioIngresado = u.NombreUsuario; 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            
         }
     }
 }
