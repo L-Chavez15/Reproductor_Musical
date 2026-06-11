@@ -41,9 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDerecho = new System.Windows.Forms.Panel();
+            this.btnIniciarSesión = new System.Windows.Forms.Button();
+            this.lbHistorial = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelCentro = new System.Windows.Forms.Panel();
             this.btnArchivos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbListadereproduccion = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
@@ -51,17 +56,13 @@
             this.lblArtista = new System.Windows.Forms.Label();
             this.lblCancion = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbHistorial = new System.Windows.Forms.ListBox();
-            this.lbListadereproduccion = new System.Windows.Forms.ListBox();
-            this.flowLayoutPanelListaReproduccion = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnIniciarSesión = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.PanelIzquierdo.SuspendLayout();
             this.panelDerecho.SuspendLayout();
             this.panelCentro.SuspendLayout();
+            this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelCancion.SuspendLayout();
-            this.flowLayoutPanelListaReproduccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSiguiente
@@ -248,6 +249,7 @@
             // panelDerecho
             // 
             this.panelDerecho.BackColor = System.Drawing.Color.Gray;
+            this.panelDerecho.Controls.Add(this.lblUsuario);
             this.panelDerecho.Controls.Add(this.btnIniciarSesión);
             this.panelDerecho.Controls.Add(this.lbHistorial);
             this.panelDerecho.Controls.Add(this.label4);
@@ -256,6 +258,43 @@
             this.panelDerecho.Name = "panelDerecho";
             this.panelDerecho.Size = new System.Drawing.Size(220, 633);
             this.panelDerecho.TabIndex = 4;
+            // 
+            // btnIniciarSesión
+            // 
+            this.btnIniciarSesión.BackColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesión.FlatAppearance.BorderSize = 0;
+            this.btnIniciarSesión.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesión.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSesión.Location = new System.Drawing.Point(21, 582);
+            this.btnIniciarSesión.Name = "btnIniciarSesión";
+            this.btnIniciarSesión.Size = new System.Drawing.Size(104, 29);
+            this.btnIniciarSesión.TabIndex = 1;
+            this.btnIniciarSesión.Text = "Iniciar Sesión";
+            this.btnIniciarSesión.UseVisualStyleBackColor = false;
+            this.btnIniciarSesión.Click += new System.EventHandler(this.btnIniciarSesión_Click);
+            // 
+            // lbHistorial
+            // 
+            this.lbHistorial.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lbHistorial.ForeColor = System.Drawing.Color.Transparent;
+            this.lbHistorial.FormattingEnabled = true;
+            this.lbHistorial.Location = new System.Drawing.Point(11, 163);
+            this.lbHistorial.Name = "lbHistorial";
+            this.lbHistorial.Size = new System.Drawing.Size(197, 225);
+            this.lbHistorial.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(16, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "RECIENTES";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelCentro
             // 
@@ -291,6 +330,33 @@
             this.label7.Size = new System.Drawing.Size(231, 30);
             this.label7.TabIndex = 3;
             this.label7.Text = "Lista de reproduccion ";
+            // 
+            // flowLayoutPanelListaReproduccion
+            // 
+            this.flowLayoutPanelListaReproduccion.AutoScroll = true;
+            this.flowLayoutPanelListaReproduccion.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelListaReproduccion.Controls.Add(this.lbListadereproduccion);
+            this.flowLayoutPanelListaReproduccion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelListaReproduccion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
+            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
+            this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
+            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(369, 426);
+            this.flowLayoutPanelListaReproduccion.TabIndex = 2;
+            this.flowLayoutPanelListaReproduccion.WrapContents = false;
+            this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
+            // 
+            // lbListadereproduccion
+            // 
+            this.lbListadereproduccion.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
+            this.lbListadereproduccion.FormattingEnabled = true;
+            this.lbListadereproduccion.ItemHeight = 15;
+            this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
+            this.lbListadereproduccion.Name = "lbListadereproduccion";
+            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 409);
+            this.lbListadereproduccion.TabIndex = 6;
+            this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
             // 
             // panel5
             // 
@@ -365,66 +431,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label4
+            // lblUsuario
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "RECIENTES";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // lbHistorial
-            // 
-            this.lbHistorial.BackColor = System.Drawing.SystemColors.WindowText;
-            this.lbHistorial.ForeColor = System.Drawing.Color.Transparent;
-            this.lbHistorial.FormattingEnabled = true;
-            this.lbHistorial.Location = new System.Drawing.Point(11, 163);
-            this.lbHistorial.Name = "lbHistorial";
-            this.lbHistorial.Size = new System.Drawing.Size(197, 225);
-            this.lbHistorial.TabIndex = 0;
-            // 
-            // lbListadereproduccion
-            // 
-            this.lbListadereproduccion.BackColor = System.Drawing.SystemColors.Desktop;
-            this.lbListadereproduccion.ForeColor = System.Drawing.Color.Transparent;
-            this.lbListadereproduccion.FormattingEnabled = true;
-            this.lbListadereproduccion.ItemHeight = 15;
-            this.lbListadereproduccion.Location = new System.Drawing.Point(3, 3);
-            this.lbListadereproduccion.Name = "lbListadereproduccion";
-            this.lbListadereproduccion.Size = new System.Drawing.Size(353, 409);
-            this.lbListadereproduccion.TabIndex = 6;
-            this.lbListadereproduccion.DoubleClick += new System.EventHandler(this.lbListadereproduccion_SelectedIndexChanged);
-            // 
-            // flowLayoutPanelListaReproduccion
-            // 
-            this.flowLayoutPanelListaReproduccion.AutoScroll = true;
-            this.flowLayoutPanelListaReproduccion.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelListaReproduccion.Controls.Add(this.lbListadereproduccion);
-            this.flowLayoutPanelListaReproduccion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelListaReproduccion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanelListaReproduccion.ForeColor = System.Drawing.Color.Silver;
-            this.flowLayoutPanelListaReproduccion.Location = new System.Drawing.Point(220, 131);
-            this.flowLayoutPanelListaReproduccion.Name = "flowLayoutPanelListaReproduccion";
-            this.flowLayoutPanelListaReproduccion.Size = new System.Drawing.Size(369, 426);
-            this.flowLayoutPanelListaReproduccion.TabIndex = 2;
-            this.flowLayoutPanelListaReproduccion.WrapContents = false;
-            this.flowLayoutPanelListaReproduccion.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelListaReproduccion_Paint);
-            // 
-            // btnIniciarSesión
-            // 
-            this.btnIniciarSesión.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesión.ForeColor = System.Drawing.Color.DimGray;
-            this.btnIniciarSesión.Location = new System.Drawing.Point(6, 582);
-            this.btnIniciarSesión.Name = "btnIniciarSesión";
-            this.btnIniciarSesión.Size = new System.Drawing.Size(104, 29);
-            this.btnIniciarSesión.TabIndex = 1;
-            this.btnIniciarSesión.Text = "Iniciar Sesión";
-            this.btnIniciarSesión.UseVisualStyleBackColor = true;
-            this.btnIniciarSesión.Click += new System.EventHandler(this.btnIniciarSesión_Click);
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(17, 15);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(65, 21);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "Usuario";
             // 
             // Form1
             // 
@@ -448,11 +464,11 @@
             this.panelDerecho.PerformLayout();
             this.panelCentro.ResumeLayout(false);
             this.panelCentro.PerformLayout();
+            this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelCancion.ResumeLayout(false);
             this.panelCancion.PerformLayout();
-            this.flowLayoutPanelListaReproduccion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -487,6 +503,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelListaReproduccion;
         private System.Windows.Forms.ListBox lbListadereproduccion;
         private System.Windows.Forms.Button btnIniciarSesión;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }
 

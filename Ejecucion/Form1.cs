@@ -21,7 +21,8 @@ namespace Ejecucion
         //Declaramos 3 estructuras de datos: 
         public ListaCircular playlist = new ListaCircular();//una lista circular para la playlist
         private Pila historial = new Pila();//una pila para el historial
-        public Arbol abb = new Arbol();//un árbol para buscar las canciones
+        public Arbol abbUsuarios = new Arbol();//un árbol para buscar las canciones
+        public ArbolMusica abbMusica = new ArbolMusica();//árbol para registrar las canciones por orden alfabético
 
         public ListaDoble rock= new ListaDoble();//una lista doble para las canciones registradas
         public ListaDoble cumbia = new ListaDoble();//lista doble para canciones de cumbia
@@ -32,6 +33,7 @@ namespace Ejecucion
 
         private bool reproduciendo = false;//indica si se esta reproduciendo una cancion o no
         private Nodo nodoActual = null;//indica la cancion actual que se esta reproduciendo
+        
 
         public Form1()
         {
@@ -280,14 +282,14 @@ namespace Ejecucion
             if (rc.ShowDialog() == DialogResult.OK)
             {
                 playlist.IngresarFinal(rc.CancionRegistrada);
-                abb.Insertar(ref abb.raizPrincipal,rc.CancionRegistrada);
+                abbMusica.Insertar(ref abbMusica.raizPrincipal,rc.CancionRegistrada);
                 //MostrarLista();
             }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Musica encontrada=abb.Buscar(abb.raizPrincipal, txtBuscador.Text);
+            Musica encontrada=abbMusica.Buscar(abbMusica.raizPrincipal, txtBuscador.Text);
             if (encontrada == null)
             {
                 MessageBox.Show("Canción no encontrada");
@@ -299,8 +301,12 @@ namespace Ejecucion
         }
         private void btnIniciarSesión_Click(object sender, EventArgs e)
         {
-            Login lg = new Login();
-            lg.ShowDialog();
+            
+            Login lg=new Login(ref abbUsuarios);
+            if (lg.ShowDialog() == DialogResult.OK)
+            {
+                lblUsuario.Text = "👤 " + lg.UsuarioIngresado.ToUpper();
+            }
         }
 
         private void flowLayoutPanelCola_Paint(object sender, PaintEventArgs e)
