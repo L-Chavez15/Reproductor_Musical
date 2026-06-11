@@ -63,6 +63,15 @@ namespace Ejecucion
                 MessageBox.Show("Usuario no existe");
                 return;
             }
+
+            if (u.Contrasena != txtContrasena.Text)
+            {
+                MessageBox.Show("Contraseña incorrecta");
+                return;
+            }
+            UsuarioIngresado = u.NombreUsuario;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
