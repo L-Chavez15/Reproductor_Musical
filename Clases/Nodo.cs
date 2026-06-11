@@ -10,6 +10,7 @@ namespace Clases
     {
         public Musica dato;
         public Usuario datoUsuario;
+        public DateTime fecha;
         public Nodo sig = null;
         public Nodo ant = null;
 

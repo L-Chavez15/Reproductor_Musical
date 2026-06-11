@@ -320,7 +320,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "RECIENTES";
+            this.label4.Text = "HISTORIAL";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelCentro

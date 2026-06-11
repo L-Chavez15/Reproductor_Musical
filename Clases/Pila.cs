@@ -13,6 +13,7 @@ namespace Clases
         public void Apilar(Musica m)
         {
             Nodo nuevo = new Nodo();
+            nuevo.fecha = DateTime.Now;
             nuevo.dato = m;
             nuevo.sig = cima;
             cima = nuevo;

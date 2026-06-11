@@ -54,8 +54,6 @@ namespace Ejecucion
             txtBuscador.BackColor = ColorTranslator.FromHtml("#2A2A2A");
             panel5.BackColor = Color.FromArgb(42, 42, 42);
 
-            // TrackBar
-            //tbBarra.BackColor = Color.FromArgb(40, 40, 40);
         }
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -171,8 +169,8 @@ namespace Ejecucion
 
             while (temp != null)
             {
-                lbHistorial.Items.Add(temp.dato.Nombre.ToUpper() + " - " + temp.dato.Artista.ToUpper());
-
+                lbHistorial.Items.Add(temp.fecha.ToString("dd/MM/yyyy HH:mm:ss") + " - " + temp.dato.Nombre.ToUpper() + " - " + temp.dato.Artista.ToUpper());
+                
                 temp = temp.sig;
             }
         }
@@ -186,10 +184,7 @@ namespace Ejecucion
         private void btnPlayList1_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            /*if (rock.primero == null)
-            {
-                return;
-            }*/
+            
             Nodo temp = rock.primero;
             while (temp != null)
             {
@@ -202,10 +197,7 @@ namespace Ejecucion
         private void btnRegueton_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            /*if (regueton.primero == null)
-            {
-                return;
-            }*/
+            
             Nodo temp = regueton.primero;
             while (temp != null)
             {
@@ -219,10 +211,7 @@ namespace Ejecucion
         private void btnCumbia_Click(object sender, EventArgs e)
         {
             lbListadereproduccion.Items.Clear();
-            /*if (cumbia.primero == null)
-            {
-                return;
-            }*/
+            
             Nodo temp = cumbia.primero;
             while (temp != null)
             {
@@ -274,7 +263,6 @@ namespace Ejecucion
             MostrarHistorial();
 
         }
-
 
         private void btnRegistrarCancion_Click(object sender, EventArgs e) 
         {
